@@ -16,9 +16,9 @@ int main(int argc, char *argv[]) {
         total=0;
         for (source; source < size; ++source){
             MPI_Recv(&inte, 1, MPI_DOUBLE, source, 0, MPI_COMM_WORLD, &status);
-            total=total+inte;
+            total=total;
         }
-        
+        total=total/(double)size;
         fprintf(stderr, "El area es : %f\n", total);
     }else{
         inte=10;
