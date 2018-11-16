@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
             MPI_Recv(&inte, 1, MPI_DOUBLE, source, 0, MPI_COMM_WORLD, &status);
             total=total+inte;
         }
-        total=total/(double)size;
+        
         fprintf(stderr, "El area es : %f\n", total);
     }else{
         inte=10;
