@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
         }
         total=total/(double)size;
         fprintf(stderr, "El area es : %f\n", total);
-    }else if (rank == 1) {
+    }else{
         inte=10;
         MPI_Send(&inte, 1, MPI_CHAR, 0, 0, MPI_COMM_WORLD);
     }
