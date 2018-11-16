@@ -4,7 +4,7 @@
 #PBS -m abe
 #PBS -N Programa
 
-#cd /hpcfs/home/fisi4028/a.martinez/AndresMartinez_Ejercicio27
+#cd /hpcfs/home/fisi4028/a.martinez/AndresMartinez_Ejercicio28
 cd $PBS_O_WORKDIR
 make -f make.mk
 ./Listings
