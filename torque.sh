@@ -10,4 +10,4 @@ make -f make.mk
 ./Listings
 
 mpicc integra.c -0 integra
-mpirun -np 5 sample 10
+mpirun -np 5 integra 10

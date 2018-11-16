@@ -14,15 +14,15 @@ int main(int argc, char *argv[]) {
     if (rank == 0) {
         source = 1;
         total=0;
-        for (source; src < size; ++src){
+        for (source; src < size; ++source){
             MPI_Recv(&inte, 1, MPI_DOUBLE, source, 0, MPI_COMM_WORLD, &Stat);
             total=total+inte;
         }
-        total=total/(double)N
+        total=total/(double)size;
         fprintf(stderr, "El area es : %f\n", total);
     }else if (rank == 1) {
         dest = 0;
-        inte=10
+        inte=10;
         MPI_Send(&inte, 1, MPI_CHAR, dest, 0, MPI_COMM_WORLD);
     }
     MPI_Finalize();
