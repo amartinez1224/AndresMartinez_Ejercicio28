@@ -14,8 +14,8 @@ int main(int argc, char *argv[]) {
     if (rank == 0) {
         source = 1;
         total=0;
-        for (source; src < size; ++source){
-            MPI_Recv(&inte, 1, MPI_DOUBLE, source, 0, MPI_COMM_WORLD, &Stat);
+        for (source; source < size; ++source){
+            MPI_Recv(&inte, 1, MPI_DOUBLE, source, 0, MPI_COMM_WORLD, &status);
             total=total+inte;
         }
         total=total/(double)size;
@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
     }else if (rank == 1) {
         dest = 0;
         inte=10;
-        MPI_Send(&inte, 1, MPI_CHAR, dest, 0, MPI_COMM_WORLD);
+        MPI_Send(&inte, 1, MPI_CHAR, 0, 0, MPI_COMM_WORLD);
     }
     MPI_Finalize();
     return 0;
